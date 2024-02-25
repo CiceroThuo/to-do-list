@@ -42,12 +42,8 @@ body {
   cursor: pointer;
 }
 
-.btn-delete {
-  background-color: #ff5252;
-  color: #fff;
-}
 
-.btn-complete {
+button {
   background-color: #4caf50;
   color: #fff;
 }
@@ -68,22 +64,4 @@ body {
 .input-container button {
   padding: 8px 16px;
   border: none;
-  background-color: #4caf50;
-  color: #fff;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-}
-
-.input-container button:hover {
-  background-color: #43a047;
-}
-
-/* Completed task styles */
-.task.completed {
-  background-color: #e0e0e0;
-}
-
-.task.completed .task-title {
-  text-decoration: line-through;
-  color: #777;
-}
+  back

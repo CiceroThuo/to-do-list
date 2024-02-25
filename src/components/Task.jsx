@@ -2,23 +2,58 @@
 import React from "react";
 
 const Task = ({ task, onDelete, onComplete }) => {
+  const taskStyle = {
+    backgroundColor: "#fff",
+    borderRadius: "8px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    padding: "20px",
+    marginBottom: "20px",
+  };
+
+  const titleStyle = {
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    marginBottom: "5px",
+  };
+
+  const descriptionStyle = {
+    fontSize: "1rem",
+    marginBottom: "10px",
+  };
+
+  const btnStyle = {
+    padding: "8px 16px",
+    borderRadius: "4px",
+    cursor: "pointer",
+  };
+
+  const deleteBtnStyle = {
+    ...btnStyle,
+    backgroundColor: "#ff5252",
+    color: "#fff",
+  };
+
+  const completeBtnStyle = {
+    ...btnStyle,
+    backgroundColor: "#4caf50",
+    color: "#fff",
+  };
+
   return (
-    <div className="flex items-center justify-between bg-red-100 p-4 rounded-md shadow-md mb-4">
+    <div style={taskStyle} className={task.completed ? "completed" : ""}>
       <div>
-        <h3 className="font-semibold">{task.title}</h3>
-        <p>{task.description}</p>
+        <h3 style={titleStyle}>{task.title}</h3>
+        <p style={descriptionStyle}>{task.description}</p>
       </div>
       <div>
         <button
-          className={`px-3 py-1 mr-2 ${
-            task.completed ? "bg-gray-500" : "bg-green-500"
-          } text-white rounded-md`}
+          style={completeBtnStyle}
           onClick={() => onComplete(task.id)}
         >
           {task.completed ? "Completed" : "Mark Complete"}
         </button>
         <button
-          className="px-3 py-1 bg-red-500 text-white rounded-md"
+          style={deleteBtnStyle}
           onClick={() => onDelete(task.id)}
         >
           Delete
